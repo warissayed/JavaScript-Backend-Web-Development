@@ -19,7 +19,7 @@ function App() {
     <>
       <h1>Waris sayed</h1>
       <p>Jokes:{jokes.length}</p>
-      {jokes.map((joke, index) => (
+      {jokes.map((joke) => (
         <div key={joke.id}>
           <p>{joke.joke}</p>
           <hr />
