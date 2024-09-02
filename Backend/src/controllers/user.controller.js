@@ -233,6 +233,7 @@ const updateUserAvatar = asyncHandler(async (req, res) => {
   if (!avatarLocalPath) {
     throw new ApiError(400, "Avatar file is missing");
   }
+  //TODO delete the old url of cloudinary and delete the old img from cloudinary
   const avatar = await uploadOnCloudinary(avatarLocalPath);
   if (!avatar.url) {
     throw new ApiError(400, "Error while uploading on avatar");
@@ -255,6 +256,7 @@ const updateUserCoverImage = asyncHandler(async (req, res) => {
   if (!coverImageLocalPath) {
     throw new ApiError(400, "coverImage file is missing");
   }
+  //TODO delete the old url of cloudinary and delete the old img from cloudinary
   const coverImage = await uploadOnCloudinary(coverImageLocalPath);
   if (!coverImage.url) {
     throw new ApiError(400, "Error while uploading on coverImage");
